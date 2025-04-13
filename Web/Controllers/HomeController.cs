@@ -1,20 +1,12 @@
-﻿using Application.Services.Interfaces;
-using Domain.ViewModel.Transaction;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers;
 
-public class HomeController(ITransactionService service) : BaseDashboardController
+public class HomeController : Controller
 {
     [HttpGet]
-    public async Task<IActionResult> Index()
+    public IActionResult Index()
     {
-        var transactions = await service.GetTransactionsAsync();
-        return View(transactions);
-    }
-
-    public IActionResult AddTransaction(AddTransactionViewModel viewModel)
-    {
-        return View("/Index)");
+        return View();
     }
 }

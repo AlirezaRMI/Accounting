@@ -3825,4 +3825,3 @@ C:\Users\WWITDs\Desktop\Alireza_Step_One\Web\bin\Debug\net9.0\zh-Hant\Microsoft.
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Web\obj\Debug\net9.0\compressed\hm5c0japlo-z4rk2tnry0.gz
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Web\obj\Debug\net9.0\compressed\p5dwjzmt0w-p9j6ulak9j.gz
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Web\obj\Debug\net9.0\compressed\z22tng4wtw-h2jh24tobz.gz
-C:\Users\WWITDs\Desktop\Alireza_Step_One\Web\obj\Debug\net9.0\Web.sourcelink.json

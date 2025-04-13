@@ -36,4 +36,3 @@ C:\Users\WWITDs\Desktop\Alireza_Step_One\Ioc\obj\Debug\net9.0\Ioc.dll
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Ioc\obj\Debug\net9.0\refint\Ioc.dll
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Ioc\obj\Debug\net9.0\Ioc.pdb
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Ioc\obj\Debug\net9.0\ref\Ioc.dll
-C:\Users\WWITDs\Desktop\Alireza_Step_One\Ioc\obj\Debug\net9.0\Ioc.sourcelink.json

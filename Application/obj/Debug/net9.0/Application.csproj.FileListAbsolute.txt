@@ -32,4 +32,3 @@ C:\Users\WWITDs\Desktop\Alireza_Step_One\Application\obj\Debug\net9.0\Applicatio
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Application\obj\Debug\net9.0\refint\Application.dll
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Application\obj\Debug\net9.0\Application.pdb
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Application\obj\Debug\net9.0\ref\Application.dll
-C:\Users\WWITDs\Desktop\Alireza_Step_One\Application\obj\Debug\net9.0\Application.sourcelink.json

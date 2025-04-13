@@ -30,4 +30,3 @@ C:\Users\WWITDs\Desktop\Alireza_Step_One\Data\obj\Debug\net9.0\Data.pdb
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Data\obj\Debug\net9.0\ref\Data.dll
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Data\bin\Debug\net9.0\Data.runtimeconfig.json
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Data\obj\Debug\net9.0\Data.genruntimeconfig.cache
-C:\Users\WWITDs\Desktop\Alireza_Step_One\Data\obj\Debug\net9.0\Data.sourcelink.json

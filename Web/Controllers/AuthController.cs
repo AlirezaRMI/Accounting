@@ -8,12 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers;
 
-public class AuthController(IUserService userService) : BaseAuthController
+public class AuthController(IUserService userService) : BaseController
 {
     [HttpGet("Login")]
     public IActionResult Login()
     {
-        if (!User.Identity!.IsAuthenticated) return RedirectToAction("Index", "Home");
         return View();
     }
 
@@ -64,11 +63,8 @@ public class AuthController(IUserService userService) : BaseAuthController
                         throw new ArgumentOutOfRangeException();
                 }
             }
-
-            return View(model);
         }
-
-        return RedirectToAction("Index", "Home");
+        return View(model);
     }
 
     [HttpGet("Register")]
@@ -99,12 +95,5 @@ public class AuthController(IUserService userService) : BaseAuthController
         }
 
         return View(model);
-    }
-
-    [HttpGet("LogOut")]
-    public async Task<IActionResult> LogOut()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Login");
     }
 }
