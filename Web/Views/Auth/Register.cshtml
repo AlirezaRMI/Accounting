@@ -1,0 +1,52 @@
+@model Domain.ViewModel.User.RegisterViewModel
+
+@{
+    ViewBag.Title = "ثبت نام";
+    Layout = "_AuthLayout";
+}
+<title>@ViewBag.Title</title>
+<div class="col-md-8 ps-md-0">
+    <div class="auth-form-wrapper px-4 py-5">
+        <a href="#" class="noble-ui-logo logo-light d-block mb-2">Noble<span>UI</span></a>
+        <h5 class="text-muted fw-normal mb-4">ایجاد رایگان حساب کاربری</h5>
+        <form asp-controller="Auth" asp-action="Register" method="post" class="forms-sample">
+            <div class="mb-3">
+                <input asp-for="UserName" type="text" class="form-control"
+                       placeholder="نام کاربری">
+
+            </div>
+            <div class="mb-3">
+
+                <input asp-for="AccountCode" type="text" class="form-control" id="AccountCode"
+                       autocomplete="AccountCode"
+                       placeholder="شماره حساب">
+            </div>
+            <div class="mb-3">
+
+                <input asp-for="Address" type="text" class="form-control" id="Address" autocomplete="Address"
+                       placeholder="آدرس">
+            </div>
+
+            <div class="mb-3">
+
+                <input asp-for="Password" type="password" class="form-control" id="userPassword" autocomplete="password"
+                       placeholder="رمز عبور">
+            </div>
+            <div class="mb-3">
+
+                <input asp-for="RePassword" type="password" class="form-control" id="RePassword"
+                       autocomplete="Repassword"
+                       placeholder="تکرار رمز عبور">
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="authCheck">
+                <label class="form-check-label" for="authCheck">
+                    مرا به خاطر بسپار
+                </label>
+            </div>
+            <button type="submit" class="btn btn-success me-2 mb-2 mb-md-0 text-white">ثبت نام</button>
+            <div asp-validation-summary="All"></div>
+        </form>
+        <a asp-controller="Auth" asp-action="Login" class="d-block mt-3 text-muted">حساب کاربری دارید؟ وارد شوید</a>
+    </div>
+</div>

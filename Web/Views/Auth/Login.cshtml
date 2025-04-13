@@ -1,0 +1,40 @@
+﻿@model Domain.ViewModel.User.LoginUserViewModel
+
+@{
+    ViewBag.Title = "ورود";
+    Layout = "_AuthLayout";
+}
+<title>@ViewBag.Title</title>
+<div class="col-md-8 ps-md-0">
+    <div class="auth-form-wrapper px-4 py-5">
+        <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
+        <h5 class="text-muted fw-normal mb-4">خوش آمدید! به حساب کاربری خود وارد شوید
+        </h5>
+        <form asp-controller="Auth" asp-action="Login" class="forms-sample">
+            <div class="mb-3">
+              
+                <input asp-for="UserName" type="text" class="form-control" id="UserName"
+                       placeholder="نام کاربری">
+            </div>
+            <div class="mb-3">
+               
+                <input asp-for="Password" type="password" class="form-control" id="userPassword"
+                       autocomplete="current-password" placeholder="رمز عبور">
+            </div>
+            <div class="form-check mb-3">
+                <input asp-for="RememberMe" type="checkbox" class="form-check-input" id="authCheck">
+                <label class="form-check-label" for="authCheck">
+                    مرا به خاطر بسپار
+                </label>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div>
+                <button type="submit"
+                   class="btn btn-primary me-2 mb-2 mb-md-0 text-white">ورود</button>
+     
+            </div>
+            <a asp-controller="Auth" asp-action="Register" class="d-block mt-3 text-muted">حساب کاربری ندارید؟
+                ثبت نام کنید</a>
+        </form>
+    </div>
+</div>

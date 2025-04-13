@@ -1,0 +1,31 @@
+﻿
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<partial name="_Metas"/>
+
+  <title>@ViewData["Title"]</title>
+
+  <partial name="SiteHeaderReferences"/>
+</head>
+<body>
+<div class="main-wrapper">
+  
+  @await Component.InvokeAsync("SideBar")
+  <div class="page-wrapper">
+    
+    @await Component.InvokeAsync("NavBar")
+
+    <div class="page-content">
+        @RenderBody()
+    </div>
+    
+    <footer
+      class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+    </footer>
+  </div>
+</div>
+
+  <partial name="SiteFooterReferences"/>
+</body>
+</html>

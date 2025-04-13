@@ -1,0 +1,87 @@
+﻿@using Domain.ViewModel.Transaction
+@model ICollection<TransactionViewModel>
+@{
+    ViewBag.Title = "خانه";
+}
+
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">افزودن تراکنش جدید</h6>
+                <form method="post" asp-controller="Home" asp-action="AddTransaction">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label class="form-label">مبلغ تراکنش</label>
+
+                                <input type="number" class="form-control" placeholder="مبلغ تراکنش را وارد کنید">
+                            </div>
+                        </div><!-- Col -->
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label class="form-label">نوع تراکنش</label>
+                                <input type="text" class="form-control" placeholder="نوع تراکنش را مشخص کنید">
+                            </div>
+                        </div><!-- Col -->
+                    </div>
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">شرح تراکنش :</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-success submit">ثبت تراکنش</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                    <h6 class="card-title mb-0"> لیست تراکنشات @User.Identity?.Name</h6>
+                    <div class="dropdown mb-2">
+                        <a type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+
+                        </a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                        <tr>
+                            <th class="pt-0">نوع تراکنش</th>
+                            <th class="pt-0">تاریخ تراکنش</th>
+                            <th class="pt-0">مبلغ تراکنش</th>
+                            <th class="pt-0">شرح تراکنش</th>
+                            <th class="pt-0 ">دستورات</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <transaction-type type="@item.Type"></transaction-type>
+                                <td>@item.CreateDate</td>
+                                <td> @item.Price تومان</td>
+                                <td><span class="badge bg-danger">@item.Description</span></td>
+                                <td>
+                                    <a href="#" class="btn btn-success btn-xs">تایید</a>
+                                    <a href="#" class="btn btn-danger btn-xs">حذف</a>
+                                    <a href="#" class="btn btn-warning btn-xs">ویرایش</a>
+                                </td>
+                            </tr>
+                        }
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
