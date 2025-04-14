@@ -51,7 +51,8 @@ public class AuthController(IUserService userService) : BaseController
 
                         return RedirectToAction("Index", "Home");
                     case LoginResult.Error:
-                        break;
+                        TempData[ErrorMessage] = "خطای ناشناخته";
+                        return RedirectToAction("Login", "Auth");
                     case LoginResult.NotFound:
                         TempData[WarningMessage] = "کاربری وجود نداشت";
                         break;

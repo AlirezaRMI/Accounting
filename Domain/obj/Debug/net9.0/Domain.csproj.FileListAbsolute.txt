@@ -20,3 +20,15 @@ C:\Users\WWITDs\Desktop\Alireza_Step_One\Domain\obj\Debug\net9.0\Domain.dll
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Domain\obj\Debug\net9.0\refint\Domain.dll
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Domain\obj\Debug\net9.0\Domain.pdb
 C:\Users\WWITDs\Desktop\Alireza_Step_One\Domain\obj\Debug\net9.0\ref\Domain.dll
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\bin\Debug\net9.0\Domain.deps.json
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\bin\Debug\net9.0\Domain.dll
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\bin\Debug\net9.0\Domain.pdb
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.sourcelink.json
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.dll
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\refint\Domain.dll
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\Domain.pdb
+C:\Users\WWITDs\Desktop\Accounting-Pro\Domain\obj\Debug\net9.0\ref\Domain.dll

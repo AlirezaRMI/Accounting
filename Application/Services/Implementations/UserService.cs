@@ -32,7 +32,6 @@ public class UserService(IBaseRepository<User> userRepository, ILogger<UserServi
                 Password = PasswordHash.EncodePasswordMd5(register.Password),
                 Status = Status.Active,
                 IsActive = false,
-                IsDelete = false,
                 CreateDate = DateOnly.FromDateTime(DateTime.Now),
                 AccountCode = register.AccountCode,
             };

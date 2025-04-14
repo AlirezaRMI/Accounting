@@ -2,6 +2,7 @@
 using Data.Context;
 using Domain.Entities.Common;
 using Domain.IRepository;
+using Domain.ViewModel.Transaction;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repository;
@@ -14,7 +15,7 @@ public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepositor
         return context.Set<T>().AsQueryable();
     }
 
-    public async Task<IReadOnlyList<T>> GetAllAsync()
+    public async Task<List<T>> GetAllAsync()
     {
         return await context.Set<T>().ToListAsync();
     }
@@ -29,7 +30,7 @@ public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepositor
         return await context.Set<T>().Where(predicate).ToListAsync();
     }
 
-    public async Task <T?> GetByIdAsync(int id)
+    public async Task <T?> GetByIdAsync(string id)
     {
        return await context.Set<T>().FindAsync(id);
     }

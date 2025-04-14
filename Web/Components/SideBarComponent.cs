@@ -6,7 +6,6 @@ public class SideBar : ViewComponent
 {
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        // todo : async action 
         await Task.CompletedTask;
         return View("SideBarComponent");
     }

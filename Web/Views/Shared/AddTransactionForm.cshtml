@@ -1,0 +1,35 @@
+@model Domain.ViewModel.Transaction.AddTransactionViewModel;
+
+<div class="col-md-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-title">ایجاد تراکنش جدید</h6>
+            <form asp-controller="Home" asp-action="AddTransaction" method="post">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">نوع تراکنش</label>
+                            <select asp-for="Type" class="form-select" id="exampleFormControlSelect1">
+                                <option selected="" disabled="">نوع تراکنش را انتخاب کنید</option>
+                                <option value="1">واریز</option>
+                                <option value="-1">برداشت</option>
+                            </select>
+                        </div>
+                    </div><!-- Col -->
+                    <div class="col-sm-6">
+                        <div class="mb-3">
+                            <label class="form-label">مبلغ تراکنش</label>
+                            <input asp-for="Price" type="text" class="form-control" placeholder="ورود مبلغ فقط به تومان">
+                        </div>
+                    </div><!-- Col -->
+                </div><!-- Row -->
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">شرح تراکنش</label>
+                    <textarea asp-for="Description" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+                <div asp-validation-summary="All"></div>
+                <button type="submit" class="btn btn-success submit">ایجاد تراکنش</button>
+            </form>
+        </div>
+    </div>
+</div>

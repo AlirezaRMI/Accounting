@@ -30,9 +30,6 @@ namespace Data.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .HasColumnType("date");
 
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
                     b.Property<string>("RoleTitle")
                         .HasColumnType("nvarchar(max)");
 
@@ -55,11 +52,11 @@ namespace Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -94,9 +91,6 @@ namespace Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
@@ -122,9 +116,6 @@ namespace Data.Migrations
 
                     b.Property<DateOnly>("CreateDate")
                         .HasColumnType("date");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
 
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");

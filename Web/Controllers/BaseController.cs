@@ -4,8 +4,8 @@ namespace Web.Controllers;
 
 public class BaseController : Controller
 {
-    protected string SuccessMessage = "SuccessMessage";
+    protected readonly string SuccessMessage = "SuccessMessage";
     protected string InfoMessage = "InfoMessage";
-    protected string WarningMessage = "WarningMessage";
-    protected string ErrorMessage = "ErrorMessage";
+    protected readonly string WarningMessage = "WarningMessage";
+    protected readonly string ErrorMessage = "ErrorMessage";
 }

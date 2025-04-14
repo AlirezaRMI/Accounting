@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "خانه";
 }
-<title>@ViewBag.Title</title>
-<div class="text-center">
-    
-</div>
+
+<partial name="AddTransactionForm"/>
+<hr/>
+
+@await Component.InvokeAsync("Transaction")

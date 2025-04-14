@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Ioc\\Ioc.csproj": {}
+    "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Ioc\\Ioc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Application\\Application.csproj": {
+    "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\WWITDs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Application\\obj\\",
+        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WWITDs\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Data\\Data.csproj"
+              "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Data\\Data.csproj"
               }
             }
           }
@@ -73,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Data\\Data.csproj": {
+    "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\WWITDs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Data\\obj\\",
+        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WWITDs\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -95,8 +95,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Domain\\Domain.csproj"
+              "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Domain\\Domain.csproj"
               }
             }
           }
@@ -162,14 +162,14 @@
         }
       }
     },
-    "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Domain\\Domain.csproj": {
+    "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\WWITDs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WWITDs\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -221,14 +221,14 @@
         }
       }
     },
-    "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Ioc\\Ioc.csproj": {
+    "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Ioc\\Ioc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Ioc\\Ioc.csproj",
+        "projectUniqueName": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Ioc\\Ioc.csproj",
         "projectName": "Ioc",
-        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Ioc\\Ioc.csproj",
+        "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Ioc\\Ioc.csproj",
         "packagesPath": "C:\\Users\\WWITDs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Ioc\\obj\\",
+        "outputPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Ioc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WWITDs\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -243,8 +243,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\WWITDs\\Desktop\\Alireza_Step_One\\Application\\Application.csproj"
+              "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\WWITDs\\Desktop\\Accounting-Pro\\Application\\Application.csproj"
               }
             }
           }

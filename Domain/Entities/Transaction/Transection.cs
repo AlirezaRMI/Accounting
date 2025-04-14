@@ -9,6 +9,8 @@ public class Transaction : BaseEntity
 
     public long Price { get; set; }
 
+    public DateTime Time { get; set; } = DateTime.UtcNow;
+
     #region Relation
 
     public User? User { get; set; }
