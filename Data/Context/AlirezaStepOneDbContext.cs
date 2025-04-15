@@ -9,6 +9,7 @@ public class AlirezaStepOneDbContext : DbContext
         : base(options)
     {
     }
-    
+
+    public DbSet<Transaction> Transactions { get; set; }
     DbSet<User> Users { get; set; }
 }

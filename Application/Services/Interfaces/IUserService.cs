@@ -27,4 +27,6 @@ public interface IUserService
     /// <returns>Tuple(LoginResult,UserViewModel?)</returns>
     Task<(LoginResult,UserViewModel?)> LoginUserAsync(LoginUserViewModel login);
     Task<UserViewModel?> GetUserByUsernameAsync(string username);
+    
+    Task<long> GetUserBalanceAsync(string id);
 }

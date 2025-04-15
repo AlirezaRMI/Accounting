@@ -55,8 +55,11 @@ namespace Data.Migrations
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("Time")
+                        .HasColumnType("date");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -65,13 +68,14 @@ namespace Data.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Transaction");
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -146,7 +150,9 @@ namespace Data.Migrations
                 {
                     b.HasOne("Domain.Entities.User", "User")
                         .WithMany("Transactions")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

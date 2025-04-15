@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddMvc();
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(UnicodeRanges.All));
-
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {

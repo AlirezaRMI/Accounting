@@ -25,6 +25,16 @@ public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepositor
         return await context.Set<T>().Where(predicate).ToListAsync();
     }
 
+    public Task<IReadOnlyList<T>> GetAllAsync(Expression<Func<T, bool>> predicate, IOrderedQueryable<T> order = null, Expression<Func<T, object>>[]? includes = null)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IReadOnlyList<T>> GetAllAsync(Expression<Func<T, bool>> predicate, IOrderedQueryable<T> order = null, string? includes = null)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<IReadOnlyList<T>> GetAllAsync(Expression<Func<T, bool>> predicate, IOrderedQueryable<T> order)
     {
         return await context.Set<T>().Where(predicate).ToListAsync();
@@ -33,6 +43,16 @@ public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepositor
     public async Task <T?> GetByIdAsync(string id)
     {
        return await context.Set<T>().FindAsync(id);
+    }
+
+    public Task<T?> GetByIdAsync(string id, Expression<Func<T, object>>[]? includes = null)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<T?> GetByIdAsync(string id, string? includes = null)
+    {
+        return await context.Set<T>().Include(includes).SingleOrDefaultAsync(x=>x.Id == id);
     }
 
     public async Task AddAsync(T entity)
@@ -52,4 +72,6 @@ public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepositor
         context.Set<T>().Remove(entity);
         await context.SaveChangesAsync();
     }
+
+
 }

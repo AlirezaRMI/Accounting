@@ -28,23 +28,27 @@ public class AuthController(IUserService userService) : BaseController
                 switch (result)
                 {
                     case LoginResult.Success:
-                        List<Claim> claims =
-                        [
-                            new(ClaimTypes.Name, user!.UserName!),
-                            new(ClaimTypes.NameIdentifier, user.Id)
-                        ];
-
-                        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                        var principal = new ClaimsPrincipal(identity);
-
-                        var authProps = new AuthenticationProperties
+                        if (user.Id != null)
                         {
-                            IsPersistent = model.RememberMe,
-                            ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7)
-                        };
+                            List<Claim> claims =
+                            [
+                                new(ClaimTypes.Name, user!.UserName!),
+                                new(ClaimTypes.NameIdentifier, user.Id)
+                            ];
 
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal,
-                            authProps);
+                            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                            var principal = new ClaimsPrincipal(identity);
+
+                            var authProps = new AuthenticationProperties
+                            {
+                                IsPersistent = model.RememberMe,
+                                ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7)
+                            };
+
+                            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal,
+                                authProps);
+                        }
+
                         TempData[SuccessMessage] = $"{user.UserName} خوش آمدید";
 
                         await Task.Delay(1000);

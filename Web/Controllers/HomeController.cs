@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices.JavaScript;
+using Application.Extensions;
 using Application.Services.Interfaces;
 using Domain.Enum.Transeation;
 using Domain.ViewModel.Transaction;
@@ -35,7 +36,7 @@ public class HomeController(ITransactionService transactionService) : BaseContro
     {
         if (ModelState.IsValid)
         {
-            AddTransactionResult result = await transactionService.AddTransactionAsync(model);
+            AddTransactionResult result = await transactionService.AddTransactionAsync(model,User.GetUserId());
             switch (result)
             {
                 case AddTransactionResult.Success:
@@ -48,12 +49,30 @@ public class HomeController(ITransactionService transactionService) : BaseContro
                     TempData[ErrorMessage] = "خطای نا شناخته";
                     return RedirectToAction("Index");
             }
-
-            
-            var modelResult = await transactionService.AddTransactionAsync(model);
         }
+        
 
         return View("Index");
+    }
+    
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ConfirmTransaction(string id)
+    {
+        var result = await transactionService.ConfirmTransactionAsync(id);
+        switch (result)
+        {
+            case MineTransaction.Success:
+                TempData["SuccessMessage"] = "تراکنش با موفقیت تایید شد";
+                break;
+            case MineTransaction.Fail:
+                TempData["ErrorMessage"] = "خطا در تایید تراکنش";
+                break;
+            case MineTransaction.Unknown:
+                TempData["WarningMessage"] = "تراکنش پیدا نشد";
+                break;
+        }
+        return RedirectToAction("Index");
     }
 
     [HttpGet]
@@ -72,7 +91,40 @@ public class HomeController(ITransactionService transactionService) : BaseContro
                 return RedirectToAction("Index");
             
         }
-     
         return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> EditTransaction(string id)
+    {
+        var transaction = await transactionService.GetTransactionByIdAsync(id);
+        if (transaction == null)
+        {
+            TempData["ErrorMessage"] = "تراکنش پیدا نشد";
+            return RedirectToAction("Index");
+        }
+
+        return View(transaction);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditTransaction(EditeTransactionViewModel transaction)
+    {
+        if (ModelState.IsValid)
+        {
+            var result = await transactionService.UpdateTransactionAsync(transaction);
+            switch (result)
+            {
+                case MineTransaction.Success:
+                    return RedirectToAction("Index");
+                case MineTransaction.Fail:
+                    TempData[ErrorMessage] = "خطا در انجام عملیات";
+                    return RedirectToAction("Index");
+                case MineTransaction.Unknown:
+                    TempData[WarningMessage] = "تراکنش یافت نشد";
+                    return RedirectToAction("Index");
+            }
+        }
+        return View();
     }
 }

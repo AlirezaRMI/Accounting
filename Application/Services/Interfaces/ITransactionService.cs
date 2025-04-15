@@ -9,16 +9,20 @@ public interface ITransactionService
     /// get All Transaction
     /// </summary>
     /// <returns>list<Trancaction></returns>
-    Task<List<TransactionViewModel>> GetTransactionsAsync();
-    
-    
+
+
+
     /// <summary>
     /// add Transaction
     /// </summary>
     /// <param name="transaction"></param>
+    /// <param name="userId"></param>
     /// <returns></returns>
-    Task<AddTransactionResult> AddTransactionAsync(AddTransactionViewModel transaction);
-    
+    Task<AddTransactionResult> AddTransactionAsync(AddTransactionViewModel transaction,string? userId);
+
+    Task<List<TransactionViewModel>> GetUserTransactionsAsync(string userId, TransactionStatus? status = null);
+    Task<TransactionViewModel?> GetTransactionByIdAsync(string id);
+    Task<MineTransaction> UpdateTransactionAsync(EditeTransactionViewModel model);
     
     /// <summary>
     /// Delete TransactionbyId
@@ -26,4 +30,6 @@ public interface ITransactionService
     /// <param name="id"></param>
     /// <returns></returns>
     Task<MineTransaction> DeleteTransactionAsync(string id);
+    
+    Task<MineTransaction> ConfirmTransactionAsync(string id);
 }

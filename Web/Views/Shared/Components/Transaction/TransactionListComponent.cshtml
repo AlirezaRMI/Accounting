@@ -2,13 +2,26 @@
 @using Application.Helpers
 @using Domain.Enum.Transeation
 @model List<Domain.ViewModel.Transaction.TransactionViewModel>
-
+<div class="col-md-3">
+    <div class="alert alert-primary" role="alert">
+        @if (Model.Any())
+        {
+            <h4>موجودی فعلی: @Model.First().TotalPrice?.ToString("#,0") تومان</h4>
+        }
+    </div>
+</div>
 <div class="text-center">
     <div class="col-md-12 stretch-card">
         <div class="card-body">
+       
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
+
+                        <div class="row">
+                            <h4>در انتظار تایید</h4>
+                        </div>
+                        <hr/>
                         <table class="table table-hover mb-0">
                             <thead>
                             <tr>
@@ -34,11 +47,16 @@
                                     <td>@DateHelper.ToShamsi(item.Createdate)</td>
                                     <td>@item.Price.ToString("#,0") تومان</td>
                                     <td>@item.Description</td>
-                                   
+
                                     <td>
-                                        <a  class="btn btn-success btn-xs ">تایید</a>
-                                        <button type="button" class="btn btn-warning btn-xs">ویرایش</button>
-                                        <a asp-controller="Home" asp-action="DeleteTransaction" asp-route-id="@item.Id" type="button" class="btn btn-danger btn-xs">حذف</a>
+
+                                        <button class="btn btn-success btn-xs task-action-btn" type="submit"> تایید نهایی</button>
+
+                                        <a asp-controller="Home" asp-action="EditTransaction" type="button"
+                                           asp-route-id="@item.Id" class="btn btn-warning btn-xs task-action-btn">ویرایش</a>
+                                        <a asp-controller="Home" asp-action="DeleteTransaction" asp-route-id="@item.Id"
+                                           type="button" class="btn btn-danger btn-xs task-action-btn"
+                                           onclick="return confirmDelete();">حذف</a>
                                     </td>
                                 </tr>
                             }
@@ -51,3 +69,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    function handleConfirm(button) {
+        const row = button.closest("tr");
+        const buttons = row.querySelectorAll(".task-action-btn");
+        buttons.forEach(btn => {
+            btn.disabled = true;
+            btn.classList.add("disabled");
+        });
+        alert("تراکنش تایید نهایی شد");
+    }
+    function confirmDelete(){
+        return confirm("آیا از حذف تراکنش اطمینان دارید؟")
+    }
+</script>
+

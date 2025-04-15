@@ -3,6 +3,7 @@ using Application.Services.Interfaces;
 using Data.Context;
 using Data.Repository;
 using Domain.Entities;
+using Domain.Enum.Transeation;
 using Domain.Enum.User;
 using Domain.IRepository;
 using Domain.ViewModel.User;
@@ -11,7 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.Services.Implementations;
 
-public class UserService(IBaseRepository<User> userRepository, ILogger<UserService> logger) : IUserService
+public class UserService(IBaseRepository<User> userRepository, ILogger<UserService> logger,AlirezaStepOneDbContext context) : IUserService
 {
     public async Task AddUserAsync(AddUserViewModel user)
     {
@@ -74,6 +75,19 @@ public class UserService(IBaseRepository<User> userRepository, ILogger<UserServi
             null => null,
             _ => new(user)
         };
+    }
+
+    public async Task<long> GetUserBalanceAsync(string id)
+    {
+        var increase = await context.Transactions
+            .Where(t => t.UserId == id && t.Type == TransactionType.Increase)
+            .SumAsync(t => t.Price);
+
+        var decrease = await context.Transactions
+            .Where(t => t.UserId == id && t.Type == TransactionType.Decrease)
+            .SumAsync(t => t.Price);
+
+        return increase - decrease;
     }
 
     public Task UpdateUser(User user)
