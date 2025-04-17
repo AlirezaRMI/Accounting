@@ -12,9 +12,8 @@ public class Transaction : BaseEntity
     public TransactionStatus Status { get; set; }
     [Required(ErrorMessage = "مبلغ تراکنش نمیتواند خالی باشد")]
     public long Price { get; set; }
-
-    public DateOnly Time { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-    public bool IsConfirmed { get; set; } = false;
+    public bool IsConfirmed { get; set; } 
+    public DateOnly CreateDate { get; set; }
     public TimeOnly CreatTime { get; set; }
 
     #region Relation

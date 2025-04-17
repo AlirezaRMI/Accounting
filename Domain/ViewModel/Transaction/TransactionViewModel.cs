@@ -10,8 +10,8 @@ public class TransactionViewModel
     [Required(ErrorMessage = "مبلغ تراکنش نمی تواند خالی باشد")]
     public long Price { get; set; }
 
-    public DateOnly Createdate { get; set; }=DateOnly.FromDateTime(DateTime.Now);
-    public TimeOnly CreatTime { get; set; }=TimeOnly.FromDateTime(DateTime.Now);
+    public DateOnly Createdate { get; set; }
+    public TimeOnly CreatTime { get; set; }
     public DateOnly UpdeteDate { get; set; }
     
     [Required(ErrorMessage = "نوع تراکنش نمی تواند خالی باشد")]
@@ -35,6 +35,7 @@ public class TransactionViewModel
         Description = transaction.Description;
         Price = transaction.Price;
         Createdate = transaction.CreateDate;
+        CreatTime = transaction.CreatTime;
         Type = transaction.Type;
         UpdeteDate = (DateOnly)transaction.UpdateDate!;
         Id = transaction.Id;
