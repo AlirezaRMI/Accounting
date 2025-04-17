@@ -3,6 +3,7 @@ using Domain.Entities;
 using Domain.Enum.Transeation;
 using Domain.IRepository;
 using Domain.ViewModel.Transaction;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Services.Implementations;
 
@@ -90,5 +91,19 @@ public class TransactionService(IBaseRepository<Transaction> transactionreposito
         await transactionrepository.UpdateAsync(transaction);
         return MineTransaction.Success; 
     }
+    public async Task<List<TransactionViewModel>> GetUserTransactionsPagingAsync(string userId, int page, int pageSize)
+    {
+        int skip = (page - 1) * pageSize;
+        
 
+        var transactions = await transactionrepository.GetUserTransactionsPagingAsync(userId, skip, pageSize);
+
+        return transactions
+            .Select(t => new TransactionViewModel(t))
+            .ToList();
+    }
+    public async Task<int> GetUserTransactionsCountAsync(string userId)
+    {
+        return await transactionrepository.GetUserTransactionsCountAsync(userId);
+    }
 }

@@ -13,8 +13,9 @@ public class TransactionViewModel
     public DateOnly Createdate { get; set; }=DateOnly.FromDateTime(DateTime.Now);
 
     public DateOnly UpdeteDate { get; set; }
+    
     [Required(ErrorMessage = "نوع تراکنش نمی تواند خالی باشد")]
-    public TransactionType Type { get; set; }
+    public  TransactionType Type { get; set; }
 
     public long? TotalPrice { get; set; }
     public string? Id { get; set; }

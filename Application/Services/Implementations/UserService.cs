@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Application.Helpers;
 using Application.Services.Interfaces;
 using Data.Context;
@@ -12,7 +13,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.Services.Implementations;
 
-public class UserService(IBaseRepository<User> userRepository, ILogger<UserService> logger,AlirezaStepOneDbContext context) : IUserService
+public class UserService(
+    IBaseRepository<User> userRepository,
+    ILogger<UserService> logger,
+    AlirezaStepOneDbContext context) : IUserService
 {
     public async Task AddUserAsync(AddUserViewModel user)
     {
@@ -75,6 +79,31 @@ public class UserService(IBaseRepository<User> userRepository, ILogger<UserServi
             null => null,
             _ => new(user)
         };
+    }
+
+    public async Task<EditeResult> EditeUserAsync(EditeUserViewModel edite)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(edite.Id))
+                return EditeResult.UserNotFound;
+
+            var user = await userRepository.GetQueryable().SingleOrDefaultAsync(x => x.Id == edite.Id);
+            if (user == null)
+                return EditeResult.UserNotFound;
+            user.UserName = edite.UserName;
+            user.Address = edite.Address;
+            user.AccountCode = edite.AccountCode;
+
+
+            await userRepository.UpdateAsync(user);
+            return EditeResult.Success;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex); // یا لاگ حرفه‌ای‌تر
+            return EditeResult.Error;
+        }
     }
 
     public async Task<long> GetUserBalanceAsync(string id)

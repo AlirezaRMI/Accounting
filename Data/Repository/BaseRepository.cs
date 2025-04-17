@@ -73,5 +73,19 @@ public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepositor
         await context.SaveChangesAsync();
     }
 
+    public async Task<List<T>> GetUserTransactionsPagingAsync(string userId, int skip, int take)
+    {
+        return await context.Set<T>()
+            .Where(t=>EF.Property<string>(t, "UserId") == userId)
+            .OrderByDescending(t => t.CreateDate)
+            .Skip(skip)
+            .Take(take)
+            .ToListAsync();
+    }
 
+    public async Task<int> GetUserTransactionsCountAsync(string userId)
+    {
+        return await context.Set<T>()
+       .CountAsync(t => EF.Property<string>(t, "UserId") == userId);
+    }
 }

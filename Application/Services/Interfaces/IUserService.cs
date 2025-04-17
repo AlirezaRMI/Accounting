@@ -28,5 +28,6 @@ public interface IUserService
     Task<(LoginResult,UserViewModel?)> LoginUserAsync(LoginUserViewModel login);
     Task<UserViewModel?> GetUserByUsernameAsync(string username);
     
+    Task<EditeResult> EditeUserAsync(EditeUserViewModel user);
     Task<long> GetUserBalanceAsync(string id);
 }

@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime;
+using Domain.Entities;
 using Domain.Enum.Transeation;
 
 namespace Domain.ViewModel.Transaction;

@@ -1,8 +1,7 @@
 ﻿@{
     ViewBag.Title = "خانه";
 }
-
+@await Component.InvokeAsync("UserInformation")
 <partial name="AddTransactionForm"/>
 <hr/>
-
-@await Component.InvokeAsync("Transaction")
+@await Component.InvokeAsync("Transaction", new { page = Convert.ToInt32(Context.Request.Query["page"]) })

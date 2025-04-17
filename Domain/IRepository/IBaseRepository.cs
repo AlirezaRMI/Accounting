@@ -17,5 +17,8 @@ public interface IBaseRepository<T> where T : BaseEntity
     Task AddAsync(T entity);
     Task UpdateAsync(T entity);
     Task DeleteAsync(T entity);
-    
+    Task<List<T>> GetUserTransactionsPagingAsync(string userId, int skip, int take);
+    Task<int> GetUserTransactionsCountAsync(string userId);
+
+
 }
