@@ -85,8 +85,10 @@ public class HomeController(ITransactionService transactionService,IUserService 
             case MineTransaction.Unknown:
                 TempData["WarningMessage"] = "تراکنش پیدا نشد";
                 break;
-        }
-        return RedirectToAction("Index");
+            
+        }  
+    
+        return Ok();
     }
 
     [HttpGet]
@@ -129,8 +131,7 @@ public class HomeController(ITransactionService transactionService,IUserService 
 
             return View(transaction);
        
-
-     
+            
     }
 
     [HttpPost]
@@ -166,7 +167,7 @@ public class HomeController(ITransactionService transactionService,IUserService 
                     return RedirectToAction("Index");
             }
         }
-
+     
         return View();
     }
 

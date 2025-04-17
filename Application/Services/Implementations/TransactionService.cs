@@ -16,6 +16,7 @@ public class TransactionService(IBaseRepository<Transaction> transactionreposito
         if(userId == null) throw new ArgumentNullException(userId);
         var mineTransaction = new Transaction()
         {
+            CreatTime = transaction.CreatTime,
             Description = transaction.Description,
             Price = transaction.Price,
             CreateDate = transaction.Createdate,
@@ -41,7 +42,8 @@ public class TransactionService(IBaseRepository<Transaction> transactionreposito
             Price = transaction.Price,
             Type = transaction.Type,
             UpdeteDate = DateOnly.FromDateTime(DateTime.Now),
-            Createdate = DateOnly.FromDateTime(DateTime.Now)
+            Createdate = DateOnly.FromDateTime(DateTime.Now),
+            CreatTime = TimeOnly.FromDateTime(DateTime.Now),
             
         };
         
@@ -58,6 +60,7 @@ public class TransactionService(IBaseRepository<Transaction> transactionreposito
             transaction.Description = model.Description;
             transaction.Status = model.Status;
             transaction.Type = model.Type;
+            transaction.CreatTime = model.CreatTime;
             await transactionrepository.UpdateAsync(transaction);
         }
 
@@ -87,6 +90,7 @@ public class TransactionService(IBaseRepository<Transaction> transactionreposito
         var transaction = await transactionrepository.GetByIdAsync(id);
         if(transaction == null)
             return MineTransaction.Unknown;
+        transaction.IsConfirmed = true;
         transaction.Status = TransactionStatus.Confirmed;
         await transactionrepository.UpdateAsync(transaction);
         return MineTransaction.Success; 

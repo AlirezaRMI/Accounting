@@ -14,6 +14,8 @@ public class Transaction : BaseEntity
     public long Price { get; set; }
 
     public DateOnly Time { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+    public bool IsConfirmed { get; set; } = false;
+    public TimeOnly CreatTime { get; set; }
 
     #region Relation
 

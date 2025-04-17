@@ -12,7 +12,7 @@ public class EditeTransactionViewModel
     public TransactionType Type { get; set; }
 
     public DateOnly Createdate { get; set; }=DateOnly.FromDateTime(DateTime.Now);
-
+    public TimeOnly CreatTime { get; set; }=TimeOnly.FromDateTime(DateTime.Now);
     public TransactionStatus Status { get; set; }
     public string? Id { get; set; }
     public string? Description { get; set; }

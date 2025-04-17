@@ -11,7 +11,7 @@ public class TransactionViewModel
     public long Price { get; set; }
 
     public DateOnly Createdate { get; set; }=DateOnly.FromDateTime(DateTime.Now);
-
+    public TimeOnly CreatTime { get; set; }=TimeOnly.FromDateTime(DateTime.Now);
     public DateOnly UpdeteDate { get; set; }
     
     [Required(ErrorMessage = "نوع تراکنش نمی تواند خالی باشد")]
@@ -20,6 +20,7 @@ public class TransactionViewModel
     public long? TotalPrice { get; set; }
     public string? Id { get; set; }
     
+    public bool IsConfirmed { get; set; }
     public string? UserId { get; set; }
     
     public TransactionViewModel()
@@ -29,7 +30,7 @@ public class TransactionViewModel
 
     public TransactionViewModel(Entities.Transaction transaction)
     {
-        
+        IsConfirmed = transaction.IsConfirmed;
         UserId = transaction.UserId;
         Description = transaction.Description;
         Price = transaction.Price;

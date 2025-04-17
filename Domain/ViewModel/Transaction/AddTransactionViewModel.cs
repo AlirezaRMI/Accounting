@@ -12,6 +12,8 @@ public class AddTransactionViewModel
     [Required(ErrorMessage = "نوع تراکنش نمی تواند خالی باشد")]
     public TransactionType Type { get; set; }
 
+    public bool IsConfirmed { get; set; } = false;
+    public TimeOnly CreatTime { get; set; }=TimeOnly.FromDateTime(DateTime.Now);
     public DateOnly Createdate { get; set; }=DateOnly.FromDateTime(DateTime.Now);
 
     public string? Description { get; set; }
