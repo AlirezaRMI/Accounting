@@ -16,7 +16,7 @@ namespace Application.Services.Implementations;
 public class UserService(
     IBaseRepository<User> userRepository,
     ILogger<UserService> logger,
-    AlirezaStepOneDbContext context) : IUserService
+    AccountingContext context) : IUserService
 {
     public async Task AddUserAsync(AddUserViewModel user)
     {

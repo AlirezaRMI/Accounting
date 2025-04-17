@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.Context;
 
-public class AlirezaStepOneDbContext : DbContext
+public class AccountingContext : DbContext
 {
-    public AlirezaStepOneDbContext(DbContextOptions<AlirezaStepOneDbContext> options)
+    public AccountingContext(DbContextOptions<AccountingContext> options)
         : base(options)
     {
     }

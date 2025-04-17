@@ -26,7 +26,7 @@ builder.Services.AddServices();
 
 #region sql config
 
-builder.Services.AddDbContext<AlirezaStepOneDbContext>
+builder.Services.AddDbContext<AccountingContext>
 (options => options.UseSqlServer
 (builder.Configuration.GetConnectionString
     ("AccountingConnection")));
@@ -57,5 +57,5 @@ app.MapControllerRoute(
         pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-app.MigrateDatabase<AlirezaStepOneDbContext>()
+app.MigrateDatabase<AccountingContext>()
     .Run();

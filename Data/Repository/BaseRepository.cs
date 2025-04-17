@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repository;
 
-public class BaseRepository<T>(AlirezaStepOneDbContext context) : IBaseRepository<T>
+public class BaseRepository<T>(AccountingContext context) : IBaseRepository<T>
     where T : BaseEntity
 {
     public IQueryable<T> GetQueryable()
