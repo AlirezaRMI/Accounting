@@ -69,11 +69,11 @@
 
                                     @if (item.Type == TransactionType.Increase)
                                     {
-                                        <td class="badge bg-success">واریز</td>
+                                        <td class="badge rounded-pill border border-success text-success">واریز</td>
                                     }
                                     else
                                     {
-                                        <td class="badge bg-danger">برداشت</td>
+                                        <td class="badge rounded-pill border border-danger text-danger">برداشت</td>
                                     }
 
                                     <td>@DateHelper.ToShamsi(item.Createdate)</td>
