@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Transactions;
 using Domain.Entities.Common;
 using Domain.Enum.User;
 

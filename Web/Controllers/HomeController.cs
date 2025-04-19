@@ -21,6 +21,7 @@ public class HomeController(ITransactionService transactionService,IUserService 
     [Authorize]
     public async Task<IActionResult> Index(int page=1)
     {
+       
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         int pageSize = 5;
 

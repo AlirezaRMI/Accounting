@@ -19,6 +19,9 @@ public class AuthController(IUserService userService) : BaseController
     [HttpPost("Login")]
     public async Task<IActionResult> Login(LoginUserViewModel model)
     {
+        //TODO check Activeuser for login 
+        
+        
         if (!User.Identity!.IsAuthenticated)
         {
             if (ModelState.IsValid)

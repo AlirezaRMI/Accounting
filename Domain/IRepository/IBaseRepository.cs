@@ -19,6 +19,4 @@ public interface IBaseRepository<T> where T : BaseEntity
     Task DeleteAsync(T entity);
     Task<List<T>> GetUserTransactionsPagingAsync(string userId, int skip, int take);
     Task<int> GetUserTransactionsCountAsync(string userId);
-
-
 }
